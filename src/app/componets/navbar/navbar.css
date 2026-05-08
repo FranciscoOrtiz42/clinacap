@@ -2,6 +2,9 @@
    padding: 0px;
    margin: 20px;
 }
+.h1t {
+    color: #005691 ;
+}
 .btn1 {
   background: #44C1A7;
   color: #ffffff;
@@ -12,20 +15,23 @@
   box-shadow: 0 4px 6px rgba(0, 86, 145, 0.2);
   color: black;
   cursor: pointer;
-  display: flex;
-  float: inline-end;
+  display:inline-flex;
+  float:inline-end;
 
 }
 .btn3 {
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    box-shadow: none;
-    color: black;
-    cursor: pointer;
-    display: flex;
-    float:right;
-    
+  background: #d4dfdc;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 6px rgba(0, 86, 145, 0.2);
+  color: black;
+  cursor: pointer;
+  display: flex;
+  float: right;
+
 }
 .container {
     margin: 20px;
