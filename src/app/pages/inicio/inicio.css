@@ -1,0 +1,9 @@
+.btn1 {
+  background: var(--grad-clinacap);
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 6px rgba(0, 86, 145, 0.2);
+}
