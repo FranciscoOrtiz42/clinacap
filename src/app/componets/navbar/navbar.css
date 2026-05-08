@@ -2,9 +2,7 @@
    padding: 0px;
    margin: 20px;
 }
-.h1t {
-    color: #005691 ;
-}
+
 .btn1 {
   background: #44C1A7;
   color: #ffffff;
@@ -15,8 +13,7 @@
   box-shadow: 0 4px 6px rgba(0, 86, 145, 0.2);
   color: black;
   cursor: pointer;
-  display:inline-flex;
-  float:inline-end;
+
 
 }
 .btn3 {
@@ -29,10 +26,22 @@
   box-shadow: 0 4px 6px rgba(0, 86, 145, 0.2);
   color: black;
   cursor: pointer;
-  display: flex;
-  float: right;
 
+}
+.nav-buttons {
+    display: flex;
+    gap: 15px; /* Espacio uniforme entre cada botón */
 }
 .container {
     margin: 20px;
+    display: flex;             /* Activa el modo horizontal */
+    justify-content: space-between; /* Empuja el logo a la izquierda y botones a la derecha */
+    align-items: center;       /* Centra verticalmente logo y botones entre sí */
+    background-color: #ffffffee;
+}
+
+.logo_clinacap {
+    display: block; /* O flex si el contenedor lo requiere */
+    height: 180px;   /* Dale un tamaño específico para probar */
+    width: auto;
 }
