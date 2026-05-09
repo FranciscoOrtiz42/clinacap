@@ -38,11 +38,12 @@
     justify-content: space-between; /* Empuja el logo a la izquierda y botones a la derecha */
     align-items: center;       /* Centra verticalmente logo y botones entre sí */
     background-color: #ffffffee;
+    width: 100%;
 }
 
 .logo_clinacap {
     display: block; /* O flex si el contenedor lo requiere */
-    height: 180px;   /* Dale un tamaño específico para probar */
+    height: 80px;   /* Dale un tamaño específico para probar */
     width: auto;
 }
 
