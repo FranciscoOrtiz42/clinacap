@@ -1,4 +1,4 @@
-﻿/* login.css - Solo estilos del componente */
+/* login.css - Solo estilos del componente */
 
 .login-container {
     background-color: var(--white);
@@ -59,7 +59,7 @@ input:focus {
 .btn-login {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(to right, #005691, #00a88e);
+    background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
     border: none;
     border-radius: 8px;
     color: rgb(255, 255, 255);
