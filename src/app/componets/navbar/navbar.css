@@ -1,6 +1,6 @@
-* {
-   padding: 0px;
-   margin: 20px;
+*{
+    margin: 0px;
+    padding: 0px;
 }
 
 .btn1 {
@@ -38,10 +38,47 @@
     justify-content: space-between; /* Empuja el logo a la izquierda y botones a la derecha */
     align-items: center;       /* Centra verticalmente logo y botones entre sí */
     background-color: #ffffffee;
+    width: 100%;
 }
 
 .logo_clinacap {
     display: block; /* O flex si el contenedor lo requiere */
-    height: 180px;   /* Dale un tamaño específico para probar */
+    height: 80px;   /* Dale un tamaño específico para probar */
     width: auto;
+}
+
+/* Traducido a CSS estándar para tu archivo navbar.css */
+.carousel {
+    --carousel-transition-duration: .6s;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.5;
+    transition: opacity 0.15s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    opacity: 0.9;
+}
+
+/* Ajuste de la transición suave que pediste */
+.carousel-item {
+    transition: transform var(--carousel-transition-duration) ease-in-out;
+}
+/* Ajusta el tamaño del contenedor del carrusel */
+.carousel-inner {
+    max-height: 200px; /* Cambia este valor a tu gusto (ej. 300px o 500px) */
+    background-color: #f8f9fa; /* Color de fondo si la imagen no llena el ancho */
+}
+
+/* Ajusta las imágenes para que no se deformen */
+.carousel-item img {
+    height: 200px; /* Debe coincidir con el max-height de arriba */
+    object-fit: cover; /* 'contain' para que se vea la imagen completa, 'cover' para que llene el espacio */
+    margin: 0 auto; /* Centra la imagen si es más angosta que la pantalla */
+  
 }
