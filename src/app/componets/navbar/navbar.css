@@ -19,29 +19,32 @@
     gap: 15px;                   /* Espacio uniforme entre cada botón */
 }
 .btn1 {
-  background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
-  color: #ffffff;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  box-shadow: 0 4px 6px rgba(0, 86, 145, 0.2);
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-
-
+    background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    box-shadow: 0 4px 6px rgba(0, 86, 145, 0.2);
+    color: rgb(255, 255, 255);
+    cursor: pointer;    
+}
+.btn1:hover {
+    transform: scale(1.1);
 }
 .btn3 {
-  background: #d4dfdc;
-  color: #ffffff;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  box-shadow: 0 4px 6px rgba(0, 86, 145, 0.2);
-  color: black;
-  cursor: pointer;
-
+    background: #d4dfdc;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    box-shadow: 0 4px 6px rgba(0, 86, 145, 0.2);
+    color: black;
+    cursor: pointer;
+}
+.btn3:hover {
+    transform: scale(1.1);
 }
 
 .logo_clinacap {
