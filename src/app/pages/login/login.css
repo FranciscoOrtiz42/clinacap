@@ -41,6 +41,18 @@ label {
     font-weight: 500;
 }
 
+
+.error-message-global {
+    background-color: #ffeaea;
+    color: #ff4d4d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid #ff4d4d;
+}
+
 input {
     width: 100%;
     padding: 12px;

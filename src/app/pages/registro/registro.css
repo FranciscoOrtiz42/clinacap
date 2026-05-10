@@ -70,6 +70,27 @@ input:focus {
     margin-top: 10px;
 }
 
+/*mensajes de error*/
+.error-message {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 500;
+    text-align: left;
+    display: block;
+}
+
+/* vuelve rojo el boton cuando faltan caracteristicas */
+.input-error {
+    border: 2px solid #ff4d4d !important;
+    background-color: #fffcfc; /* Un toque rojizo muy sutil al fondo */
+}
+
+/*  para cuando el input es válido */
+.input-success {
+    border: 2px solid #00a88e !important;
+}
+
 .btn-login:hover {
     opacity: 0.9;
     transform: translateY(-1px);
