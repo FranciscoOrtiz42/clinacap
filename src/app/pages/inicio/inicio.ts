@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router'; // 1. Importamos la herramienta
+import { RouterLink } from '@angular/router'; 
 
 @Component({
   selector: 'app-inicio',
-  standalone: true, // Esto indica que el componente se gestiona solo
-  imports: [RouterLink], // 2. Agregamos RouterLink aquí
+  standalone: true, 
+  imports: [RouterLink], 
   templateUrl: './inicio.html',
   styleUrl: './inicio.css',
 })
