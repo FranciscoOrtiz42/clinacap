@@ -4,6 +4,7 @@
     align-items: center;         /* Centra verticalmente los elementos */
     padding: 10px 40px;          /* Espaciado interno para que no toquen los bordes de la pantalla */
     background-color: #ffffff;   /* Opcional: color de fondo del navbar */
+    margin-bottom: 0;
 }
 
 .logo-group {

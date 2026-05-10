@@ -1,7 +1,6 @@
 .main-content {
     display: block;
     width: 100%;
-    /* Si tu navbar mide 100px, dale un margen un poco mayor para que respire */
-    margin-top: 100px; 
+    margin-top: 0;      /* Cambiado de 100px a 0 */
     position: relative;
 }

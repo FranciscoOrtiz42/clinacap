@@ -1,3 +1,16 @@
+.inicio-container {
+    width: 100%;
+    margin-top: 0;      /* Asegura que no haya margen superior */
+    margin-bottom: 0;
+    padding-top: 0;     /* Elimina cualquier padding interno superior */
+    display: block;
+    overflow: hidden;   /* Evita desbordamientos no deseados */
+}
+.carousel {
+    --carousel-transition-duration: .6s;
+    margin-bottom: 0 !important; /* <--- Asegura que el carrusel no tenga margen inferior */
+    margin-top: 0 !important;    /* <--- Asegura que no tenga margen superior */
+}
 .btn1 {
   background: var(--grad-clinacap);
   color: #ffffff;
@@ -31,13 +44,13 @@
 }
 /* Ajusta el tamaño del contenedor del carrusel */
 .carousel-inner {
-    max-height: 450px; /* Cambia este valor a tu gusto (ej. 300px o 500px) */
+    max-height: 420px; /* Cambia este valor a tu gusto (ej. 300px o 500px) */
     background-color: #f8f9fa; /* Color de fondo si la imagen no llena el ancho */
 }
 
 /* Ajusta las imágenes para que no se deformen */
 .carousel-item img {
-    height: 450px; /* Debe coincidir con el max-height de arriba */
+    height: 420px; /* Debe coincidir con el max-height de arriba */
     object-fit: cover; /* 'contain' para que se vea la imagen completa, 'cover' para que llene el espacio */
     margin: 0 auto; /* Centra la imagen si es más angosta que la pantalla */
   
