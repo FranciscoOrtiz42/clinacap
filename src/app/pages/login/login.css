@@ -1,6 +1,4 @@
-﻿/* login.css - Solo estilos del componente */
-
-.login-container {
+﻿.login-container {
     background-color: var(--white);
     padding: 40px;
     border-radius: 15px;
@@ -39,6 +37,18 @@ label {
     color: var(--dark-text);
     margin-bottom: 8px;
     font-weight: 500;
+}
+
+
+.error-message-global {
+    background-color: #ffeaea;
+    color: #ff4d4d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid #ff4d4d;
 }
 
 input {
