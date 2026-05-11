@@ -1,0 +1,301 @@
+.reserva-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.step {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #e0e0e0; /* Color inactivo */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.line {
+    height: 2px;
+    width: 100px;
+    background-color: #e0e0e0; /* Línea inactiva */
+    transition: 0.3s;
+}
+
+
+.active {
+    background-color:  #00a88e;
+    /*background-color: linear-gradient(to right, #005691, #00a88e);*/
+}
+
+.active-line {
+    background-color:#005691;
+}
+
+/* 1. Estructura del texto de error */
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+/* 2. Estado de falla */
+.input-error {
+    border: 2px solid #ff4d4d !important;
+    background-color: #fffafa !important; 
+    animation: shake 0.3s ease-in-out;
+}
+
+/* 3. Estado de éxito  */
+.input-success {
+    border: 2px solid #00a88e !important;
+    background-color: #f6fffb !important;
+}
+
+/* 4. Bloqueo  del botón de continuar */
+button:disabled {
+    background-color: #cbd5e1 !important;
+    color: #94a3b8 !important;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* 5. Keyframes para el desafío visual del error */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.btn-primary{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
+    border: none;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+    margin-top: 10px;
+}
+
+.btn-secondary{
+    padding: 12px;
+    border: none;
+    background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+    margin-top: 10px;
+
+}
+
+/* Aviso cuando no hay fecha */
+.aviso-fecha {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Grilla dinámica para las horas */
+.horas-grid {
+    display: grid;
+    /* Esto crea columnas automáticas de mínimo 80px */
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Diseño base del botón de hora */
+.btn-hora {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 5px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Efecto hover (solo si no está ya seleccionado) */
+.btn-hora:hover:not(.hora-activa) {
+    background-color: #f0f0f0;
+    border-color: #00a88e;
+}
+
+/* Diseño cuando la hora es clickeada y guardada en la variable */
+.hora-activa {
+    background-color: #00a88e;
+    color: white;
+    border-color: #00a88e;
+    box-shadow: 0 2px 4px rgba(0, 168, 142, 0.4);
+}
+
+/* Subtítulo informativo */
+.subtitulo-resumen {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de la lista */
+.medicos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Tarjeta  médico */
+.medico-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.medico-info h4 {
+    margin: 0 0 5px 0;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+.medico-info span {
+    font-size: 0.85rem;
+    color: #64748b;
+    background-color: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.medico-hora {
+    font-weight: 700;
+    color: #00a88e;
+    font-size: 1.1rem;
+    background: #f6fffb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #00a88e;
+}
+
+/* Efectos de interacción y selección */
+.medico-card:hover:not(.medico-activo) {
+    border-color: #94a3b8;
+    background-color: #f8fafc;
+    transform: translateY(-2px);
+}
+
+.medico-activo {
+    border-color: #00a88e;
+    background-color: #f6fffb;
+    box-shadow: 0 4px 12px rgba(0, 168, 142, 0.15);
+}
+
+/* Tarjeta de resumen estilo Ticket */
+.ticket-resumen {
+    background-color: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+/* Fila de cada dato */
+.resumen-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+/* Etiquetas (Lado izquierdo) */
+.resumen-label {
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Valores (Lado derecho) */
+.resumen-valor {
+    color: #1e293b;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* Para resaltar lo más importante (Fecha y Doctor) */
+.destaque {
+    color: #00a88e;
+    font-size: 1.1rem;
+}
+
+/* Línea separadora */
+.separador-ticket {
+    border: 0;
+    height: 1px;
+    background-color: #cbd5e1;
+    margin: 20px 0;
+}
+
+/* Botón Final de Acción (Diferente al primario para denotar cierre) */
+.btn-success {
+    background-color: #00a88e; /* Mantiene tu verde clínico */
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 168, 142, 0.2);
+}
+
+.btn-success:hover {
+    background-color: #008a74;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 168, 142, 0.3);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group select, .form-group input {
+    border-radius: 8px; /*redondea las esquinas del select */
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}

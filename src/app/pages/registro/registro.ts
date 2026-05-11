@@ -29,7 +29,7 @@ export class Registro {
     // Guardamos los datos
     sessionStorage.setItem('usuarioLogueado', JSON.stringify(usuarioData));
     
-    console.log('Datos guardados con Ã©xito');
+    console.log('Datos guardados con éxito');
 
     // 3. Redirige al usuario al login
     this.router.navigate(['/login']); 
