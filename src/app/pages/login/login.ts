@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
-export class Login {
+export class Login  {
   // Variables para capturar lo que el usuario escribe
   userEmail: string = '';
   userPass: string = '';
@@ -31,9 +31,9 @@ export class Login {
       if (this.userEmail === usuario.correo && this.userPass === usuario.pass) {
         console.log('Login exitoso');
         this.errorMessage = '';
-        this.router.navigate(['/inicio']); // Cámbialo a tu ruta de inicio
+        this.router.navigate([''], { state: { nombreUsuario: usuario.nombre } });
       } else {
-        // 3. Si se equivoca, vaciamos y tiramos error
+        // los datos no coinciden 
         this.manejarError('Usuario o contraseña incorrectos');
       }
     } else {

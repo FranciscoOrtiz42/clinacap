@@ -1,3 +1,30 @@
+.toast-bienvenida {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(to right, #005691, #00a88e); /* Verde CLINACAP */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999; /* Para que quede por encima de absolutamente todo */
+  font-size: 1.05rem;
+  
+  /* Animación: entra deslizándose en 0.4s */
+  animation: slideInRight 0.4s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .inicio-container {
     width: 100%;
     margin-top: 0;      /* Asegura que no haya margen superior */
