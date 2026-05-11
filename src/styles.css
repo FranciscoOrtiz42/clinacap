@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita que aparezca una barra de scroll horizontal */
+}
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden; /* Evita que la página se mueva de lado a lado */
+}
+
+/* Esto asegura que el tag de la navbar se expanda */
+app-navbar {
+    display: block;
+    width: 100%;
+}
+/* Esto obliga a que el "cascarón" de Angular use todo el ancho */
+app-root {
+    display: block;
+    width: 100%;
+}
+.main-layout {
+    display: block;
+    margin-top: 100px; /* Ajusta este valor al alto de tu barra azul */
+    width: 100%;
+    min-height: 100vh;
+}

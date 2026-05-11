@@ -35,4 +35,3 @@ export class Registro {
     this.router.navigate(['/login']); 
   }
 }
-//esta esta aun sin terminar se requiere agregar funcionalidad en registro.html
