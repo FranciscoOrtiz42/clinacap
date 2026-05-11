@@ -10,6 +10,7 @@
     --carousel-transition-duration: .6s;
     margin-bottom: 0 !important; /* <--- Asegura que el carrusel no tenga margen inferior */
     margin-top: 0 !important;    /* <--- Asegura que no tenga margen superior */
+    box-shadow: bottom 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .carousel {

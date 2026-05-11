@@ -1,1 +1,247 @@
-<p>reserva works!</p>
+<div class="reserva-container">
+    <h2>Reserva de Hora CLINACAP</h2>
+
+    <div class="stepper">
+        <div class="step" [ngClass]="{'active': pasoActual >= 1}">1</div>
+        <div class="line" [ngClass]="{'active-line': pasoActual >= 2}"></div>
+        <div class="step" [ngClass]="{'active': pasoActual >= 2}">2</div>
+        <div class="line" [ngClass]="{'active-line': pasoActual >= 3}"></div>
+        <div class="step" [ngClass]="{'active': pasoActual >= 3}">3</div>
+        <div class="line" [ngClass]="{'active-line': pasoActual >= 4}"></div>
+        <div class="step" [ngClass]="{'active': pasoActual >= 4}">4</div>
+        <div class="line" [ngClass]="{'active-line': pasoActual >= 5}"></div>
+        <div class="step" [ngClass]="{'active': pasoActual >= 5}">5</div>
+    </div>
+
+    <div class="form-content">
+    @if (pasoActual === 1) { 
+        <h3>Ingresa los datos del paciente</h3>
+        
+        <div class="form-group">
+            <label>RUT del paciente</label>
+            <input type="text" 
+                [(ngModel)]="rutPaciente" 
+                name="rutPaciente"
+                required
+                pattern="^[0-9]{7,8}-[0-9Kk]{1}$"
+                #rutVar="ngModel"
+                [ngClass]="{'input-error': rutVar.invalid && (rutVar.dirty || rutVar.touched), 'input-success': rutVar.valid && rutVar.dirty}"
+                placeholder="Ej: 12345678-9 (Sin puntos)">
+                
+            @if (rutVar.invalid && (rutVar.dirty || rutVar.touched)) {
+                <div class="error-message">
+                    @if (rutVar.errors?.['required']) {
+                        <span>El RUT es obligatorio.</span>
+                    }
+                    @if (rutVar.errors?.['pattern']) {
+                        <span>Formato inválido. Usa guion y sin puntos.</span>
+                    }
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Previsión</label>
+            <select 
+                [(ngModel)]="previsionPaciente" 
+                name="previsionPaciente"
+                required
+                #prevVar="ngModel"
+                [ngClass]="{'input-error': prevVar.invalid && (prevVar.dirty || prevVar.touched), 'input-success': prevVar.valid && prevVar.dirty}">
+                
+                <option value="" disabled selected>Seleccione...</option>
+                <option value="FONASA">FONASA</option>
+                <option value="ISAPRE">ISAPRE</option>
+                <option value="PARTICULAR">PARTICULAR</option>
+            </select>
+
+            @if (prevVar.invalid && (prevVar.dirty || prevVar.touched)) {
+                <div class="error-message">
+                    @if (prevVar.errors?.['required']) {
+                        <span>Debes seleccionar una previsión.</span>
+                    }
+                </div>
+            }
+        </div>
+        <div class="botones-control">
+            <button class="btn-success" 
+                (click)="siguientePaso()" 
+                [disabled]="rutVar.invalid || prevVar.invalid">
+                Continuar
+            </button>
+        </div>
+    }
+
+
+    @if (pasoActual === 2) {
+        <h3>Selecciona la atención</h3>
+
+        <div class="form-group">
+            <label>Especialidad Médica</label>
+            <select 
+                [(ngModel)]="especialidad" 
+                name="especialidad"
+                required
+                #espVar="ngModel"
+                [ngClass]="{'input-error': espVar.invalid && (espVar.dirty || espVar.touched), 'input-success': espVar.valid && espVar.dirty}">
+                
+                <option value="" disabled selected>Seleccione especialidad...</option>
+                <option value="Medicina General">Medicina General</option>
+                <option value="Cardiología">Cardiología</option>
+                <option value="Kinesiología">Kinesiología</option>
+                <option value="Traumatología">Traumatología</option>
+                <option value="Pediatría">Pediatría</option>
+            </select>
+
+            @if (espVar.invalid && (espVar.dirty || espVar.touched)) {
+                <div class="error-message">
+                    <span>Debes seleccionar una especialidad médica.</span>
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label>Sucursal CLINACAP</label>
+            <select 
+                [(ngModel)]="ubicacion" 
+                name="ubicacion"
+                required
+                #ubiVar="ngModel"
+                [ngClass]="{'input-error': ubiVar.invalid && (ubiVar.dirty || ubiVar.touched), 'input-success': ubiVar.valid && ubiVar.dirty}">
+                
+                <option value="" disabled selected>Seleccione ubicación...</option>
+                <option value="Puente Alto">CLINACAP Puente Alto</option>
+                <option value="Vespucio">CLINACAP Vespucio</option>
+                <option value="Maipu">CLINACAP Maipú</option>
+                <option value="Providencia">CLINACAP Providencia</option>
+            </select>
+
+            @if (ubiVar.invalid && (ubiVar.dirty || ubiVar.touched)) {
+                <div class="error-message">
+                    <span>Debes seleccionar una sede válida.</span>
+                </div>
+            }
+        </div>
+
+        <div class="botones-control">
+            <button class="btn-success" (click)="pasoAnterior()">Volver</button>
+            <button class="btn-success" 
+                (click)="siguientePaso()" 
+                [disabled]="espVar.invalid || ubiVar.invalid">
+                Continuar
+            </button>
+        </div>
+        
+    }
+    @if (pasoActual === 3) {
+        <h3>Selecciona Fecha y Hora</h3>
+
+        <div class="form-group">
+            <label>Fecha de atención</label>
+            <input type="date" [(ngModel)]="fechaSeleccionada" name="fecha">
+        </div>
+
+        <div class="form-group">
+            <label>Horas Disponibles</label>
+            
+            @if (!fechaSeleccionada) {
+                <p class="aviso-fecha">Por favor, selecciona una fecha primero.</p>
+            } @else {
+                <div class="horas-grid">
+                    @for (hora of horasDisponibles; track hora) {
+                        <button type="button" 
+                                class="btn-hora" 
+                                [class.hora-activa]="horaSeleccionada === hora"
+                                (click)="seleccionarHora(hora)">
+                            {{ hora }}
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+
+        <div class="botones-control">
+            <button class="btn-success" (click)="pasoAnterior()">Volver</button>
+            <button class="btn-success" 
+                    (click)="siguientePaso()" 
+                    [disabled]="!fechaSeleccionada || !horaSeleccionada">
+                Continuar
+            </button>
+        </div>
+    }
+    @if (pasoActual === 4) {
+        <h3>Selecciona tu Especialista</h3>
+        <p class="subtitulo-resumen">
+            Mostrando especialistas en <strong>{{ especialidad }}</strong> cercanos a las <strong>{{ horaSeleccionada }}</strong>:
+        </p>
+
+        <div class="medicos-list">
+            @for (medico of medicosDisponibles; track medico.id) {
+                <div class="medico-card"
+                    [class.medico-activo]="medicoSeleccionado?.id === medico.id"
+                    (click)="seleccionarMedico(medico)">
+                    
+                    <div class="medico-info">
+                        <h4>{{ medico.nombre }}</h4>
+                        <span>{{ medico.especialidad }}</span>
+                    </div>
+                    
+                    <div class="medico-hora">
+                        🕒 {{ medico.horaExacta }}
+                    </div>
+                    
+                </div>
+            }
+        </div>
+
+        <div class="botones-control">
+            <button class="btn-success" (click)="pasoAnterior()">Volver</button>
+            <button class="btn-success" 
+                    (click)="siguientePaso()" 
+                    [disabled]="!medicoSeleccionado">
+                Continuar
+            </button>
+        </div>
+    }
+    @if (pasoActual === 5) {
+        <h3>Confirma tu Reserva</h3>
+        <p class="subtitulo-resumen">Verifica que los datos de tu atención sean correctos antes de confirmar.</p>
+
+        <div class="ticket-resumen">
+            <div class="resumen-item">
+                <span class="resumen-label">Paciente (RUT):</span>
+                <span class="resumen-valor">{{ rutPaciente }}</span>
+            </div>
+            <div class="resumen-item">
+                <span class="resumen-label">Previsión:</span>
+                <span class="resumen-valor">{{ previsionPaciente }}</span>
+            </div>
+            <div class="resumen-item">
+                <span class="resumen-label">Especialidad:</span>
+                <span class="resumen-valor">{{ especialidad }}</span>
+            </div>
+            <div class="resumen-item">
+                <span class="resumen-label">Sucursal:</span>
+                <span class="resumen-valor">CLINACAP {{ ubicacion }}</span>
+            </div>
+            <hr class="separador-ticket">
+            <div class="resumen-item">
+                <span class="resumen-label">Fecha:</span>
+                <span class="resumen-valor destaque">{{ fechaSeleccionada }}</span>
+            </div>
+            <div class="resumen-item">
+                <span class="resumen-label">Profesional:</span>
+                <span class="resumen-valor destaque">{{ medicoSeleccionado?.nombre }}</span>
+            </div>
+            <div class="resumen-item">
+                <span class="resumen-label">Hora de Atención:</span>
+                <span class="resumen-valor destaque">🕒 {{ medicoSeleccionado?.horaExacta }}</span>
+            </div>
+        </div>
+
+        <div class="botones-control">
+            <button class="btn-success" (click)="pasoAnterior()">Volver a editar</button>
+            <button class="btn-success" (click)="finalizarReserva()">Confirmar Reserva</button>
+        </div>
+    }
+</div>
