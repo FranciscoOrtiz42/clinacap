@@ -84,6 +84,6 @@ export class Reserva {
     alert('¡Excelente! Tu hora en CLINACAP ha sido reservada con éxito.');
     
     // Opcional: Limpiar las variables si quieres, o simplemente redirigir
-    this.router.navigate(['/inicio']);
+    this.router.navigate(['/']);
   }
 }
