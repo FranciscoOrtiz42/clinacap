@@ -1,12 +1,12 @@
 import { Component, inject, OnInit , ChangeDetectorRef} from '@angular/core';
 import { Router } from '@angular/router';
-import { RouterLink } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './inicio.html',
   styleUrls: ['./inicio.css']
 })
@@ -14,7 +14,7 @@ export class Inicio implements OnInit {
   // Variables para controlar el Toast
   nombreUsuario: string = '';
   mostrarBienvenida: boolean = false;
-  
+
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
 
@@ -22,7 +22,7 @@ export class Inicio implements OnInit {
     // 1. Interceptamos la navegación actual para revisar si trae "equipaje" (el state)
     const navegacion = this.router.getCurrentNavigation();
     const state = navegacion?.extras.state as { nombreUsuario: string };
-    
+
     // Si viene de loguearse y trae el nombre, activamos la alerta
     if (state && state.nombreUsuario) {
       this.nombreUsuario = state.nombreUsuario;
