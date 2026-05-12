@@ -2,7 +2,7 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background: linear-gradient(to right, #005691, #00a88e); /* Verde CLINACAP */
+  background: linear-gradient(to right, #005691, #00a88e); 
   color: white;
   padding: 15px 25px;
   border-radius: 8px;
@@ -27,16 +27,16 @@
 
 .inicio-container {
     width: 100%;
-    margin-top: 0;      /* Asegura que no haya margen superior */
+    margin-top: 0;      
     margin-bottom: 0;
-    padding-top: 0;     /* Elimina cualquier padding interno superior */
+    padding-top: 0;     
     display: block;
-    overflow: hidden;   /* Evita desbordamientos no deseados */
+    overflow: hidden;  
 }
 .carousel {
     --carousel-transition-duration: .6s;
-    margin-bottom: 0 !important; /* <--- Asegura que el carrusel no tenga margen inferior */
-    margin-top: 0 !important;    /* <--- Asegura que no tenga margen superior */
+    margin-bottom: 0 !important; 
+    margin-top: 0 !important;    
     box-shadow: bottom 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -70,9 +70,9 @@
 
 /* Ajusta las imágenes para que no se deformen */
 .carousel-item img {
-    height: 410px; /* Debe coincidir con el max-height de arriba */
-    object-fit: cover; /* 'contain' para que se vea la imagen completa, 'cover' para que llene el espacio */
-    margin: 0 auto; /* Centra la imagen si es más angosta que la pantalla */
+    height: 410px;
+    object-fit: cover; 
+    margin: 0 auto; 
   
 }
 
@@ -95,10 +95,10 @@
 
 /* El botón circular */
 .btn-circular {
-    width: 100px;       /* Ajusta el tamaño según prefieras */
+    width: 100px;      
     height: 100px;
-    border-radius: 30%; /* Lo hace redondo */
-    border: 3px solid #039ca7; /* Color acorde a tu gradiente */
+    border-radius: 30%; 
+    border: 3px solid #039ca7; 
     background-color: white;
     overflow: hidden;   /* Para que la imagen no se salga del círculo */
     cursor: pointer;

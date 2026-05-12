@@ -79,8 +79,6 @@ export class Reserva {
 
   // Tu función para cerrar con broche de oro
   finalizarReserva() {
-    // En un proyecto real, aquí harías un POST a tu base de datos.
-    // Por ahora, simulamos el éxito:
     alert('¡Excelente! Tu hora en CLINACAP ha sido reservada con éxito.');
     
     // Opcional: Limpiar las variables si quieres, o simplemente redirigir

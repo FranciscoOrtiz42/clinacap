@@ -1,22 +1,22 @@
 .navbar-container {
     display: flex;
-    justify-content: space-between; /* Esto empuja el logo a la izquierda y botones a la derecha */
-    align-items: center;         /* Centra verticalmente los elementos */
-    padding: 10px 40px;          /* Espaciado interno para que no toquen los bordes de la pantalla */
-    background-color: #ffffff;   /* Opcional: color de fondo del navbar */
+    justify-content: space-between; 
+    align-items: center;         
+    padding: 10px 40px;        
+    background-color: #ffffff;   
     margin-bottom: 0;
 }
 
 .logo-group {
     display: flex;
     align-items: center;
-    gap: 10px;                   /* Espacio entre el isotipo y el texto del logo */
+    gap: 10px;                  
 }
 
-/* Mantén tu estilo de nav-buttons pero asegúrate de que sea flex */
+
 .nav-buttons {
     display: flex;
-    gap: 15px;                   /* Espacio uniforme entre cada botón */
+    gap: 15px;                   
 }
 .btn1 {
     background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
@@ -48,8 +48,8 @@
 }
 
 .logo_clinacap {
-    display: block; /* O flex si el contenedor lo requiere */
-    height: 80px;   /* Dale un tamaño específico para probar */
+    display: block; 
+    height: 80px;  
     width: auto;
 }
 
