@@ -4,7 +4,7 @@
     padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .stepper {
@@ -85,34 +85,6 @@ button:disabled {
     75% { transform: translateX(5px); }
 }
 
-.btn-primary{
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
-    border: none;
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, opacity 0.3s;
-    margin-top: 10px;
-}
-
-.btn-secondary{
-    padding: 12px;
-    border: none;
-    background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.2s, opacity 0.3s;
-    margin-top: 10px;
-
-}
 
 /* Aviso cuando no hay fecha */
 .aviso-fecha {
@@ -264,7 +236,34 @@ button:disabled {
     background-color: #cbd5e1;
     margin: 20px 0;
 }
+.btn-primary{
+    
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
+    border: none;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+    margin-top: 10px;
+}
 
+.btn-secondary{
+    padding: 12px;
+    border: none;
+    background: linear-gradient(to right, #005691, #00a88e); /*agrega degradado de colores en el boton*/
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+    margin-top: 10px;
+
+}
 /* Botón Final de Acción (Diferente al primario para denotar cierre) */
 .btn-success {
     background-color: #00a88e; /* Mantiene tu verde clínico */
@@ -277,6 +276,7 @@ button:disabled {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 168, 142, 0.2);
+    margin-top: 10px;
 }
 
 .btn-success:hover {
@@ -298,4 +298,10 @@ button:disabled {
     outline: none; 
     transition: all 0.3s ease;
     cursor: pointer;
+}
+.botones-control {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
 }

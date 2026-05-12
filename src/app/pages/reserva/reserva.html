@@ -63,13 +63,13 @@
                 </div>
             }
         </div>
-
-        <button class="btn-primary" 
-            (click)="siguientePaso()" 
-            [disabled]="rutVar.invalid || prevVar.invalid">
-            Continuar
-        </button>
-
+        <div class="botones-control">
+            <button class="btn-success" 
+                (click)="siguientePaso()" 
+                [disabled]="rutVar.invalid || prevVar.invalid">
+                Continuar
+            </button>
+        </div>
     }
 
 
@@ -124,8 +124,8 @@
         </div>
 
         <div class="botones-control">
-            <button class="btn-secondary" (click)="pasoAnterior()">Volver</button>
-            <button class="btn-primary" 
+            <button class="btn-success" (click)="pasoAnterior()">Volver</button>
+            <button class="btn-success" 
                 (click)="siguientePaso()" 
                 [disabled]="espVar.invalid || ubiVar.invalid">
                 Continuar
@@ -161,8 +161,8 @@
         </div>
 
         <div class="botones-control">
-            <button class="btn-secondary" (click)="pasoAnterior()">Volver</button>
-            <button class="btn-primary" 
+            <button class="btn-success" (click)="pasoAnterior()">Volver</button>
+            <button class="btn-success" 
                     (click)="siguientePaso()" 
                     [disabled]="!fechaSeleccionada || !horaSeleccionada">
                 Continuar
@@ -195,8 +195,8 @@
         </div>
 
         <div class="botones-control">
-            <button class="btn-secondary" (click)="pasoAnterior()">Volver</button>
-            <button class="btn-primary" 
+            <button class="btn-success" (click)="pasoAnterior()">Volver</button>
+            <button class="btn-success" 
                     (click)="siguientePaso()" 
                     [disabled]="!medicoSeleccionado">
                 Continuar
@@ -240,7 +240,7 @@
         </div>
 
         <div class="botones-control">
-            <button class="btn-secondary" (click)="pasoAnterior()">Volver a editar</button>
+            <button class="btn-success" (click)="pasoAnterior()">Volver a editar</button>
             <button class="btn-success" (click)="finalizarReserva()">Confirmar Reserva</button>
         </div>
     }

@@ -37,6 +37,7 @@
     --carousel-transition-duration: .6s;
     margin-bottom: 0 !important; /* <--- Asegura que el carrusel no tenga margen inferior */
     margin-top: 0 !important;    /* <--- Asegura que no tenga margen superior */
+    box-shadow: bottom 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .carousel {
@@ -62,13 +63,14 @@
 }
 /* Ajusta el tamaño del contenedor del carrusel */
 .carousel-inner {
-    max-height: 420px; 
-    background-color: #f8f9fa; 
+    max-height: 410px; 
+    background-color: #f8f9fa;
+    box-shadow: bottom 0 10px 25px rgba(0, 0, 0, 0.2); 
 }
 
 /* Ajusta las imágenes para que no se deformen */
 .carousel-item img {
-    height: 420px; /* Debe coincidir con el max-height de arriba */
+    height: 410px; /* Debe coincidir con el max-height de arriba */
     object-fit: cover; /* 'contain' para que se vea la imagen completa, 'cover' para que llene el espacio */
     margin: 0 auto; /* Centra la imagen si es más angosta que la pantalla */
   
