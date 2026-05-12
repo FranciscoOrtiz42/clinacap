@@ -6,7 +6,6 @@
     width: 90%;
     max-width: 400px;
     text-align: center;
-    /* Añadimos esto para asegurar que se vea bien si el flex del body falla */
     margin: 20px auto;
      
 }
@@ -19,7 +18,7 @@
     letter-spacing: 2px;
 }
 
-.subtitle {
+.subtitulo {
     font-size: 11px;
     color: #666;
     margin-bottom: 30px;

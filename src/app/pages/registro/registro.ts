@@ -32,6 +32,6 @@ export class Registro {
     console.log('Datos guardados con Ã©xito');
 
     // 3. Redirige al usuario al login
-    this.router.navigate(['/']); 
+    this.router.navigate(['/login']); 
   }
 }

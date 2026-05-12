@@ -19,11 +19,11 @@ export class Inicio implements OnInit {
   private cdr = inject(ChangeDetectorRef);
 
   constructor() {
-    // 1. Interceptamos la navegación actual para revisar si trae "equipaje" (el state)
+    // 1. Intercepta la navegación actual para revisar si trae el state
     const navegacion = this.router.getCurrentNavigation();
     const state = navegacion?.extras.state as { nombreUsuario: string };
 
-    // Si viene de loguearse y trae el nombre, activamos la alerta
+    // Si viene de loguearse y trae el nombre, activa la alerta
     if (state && state.nombreUsuario) {
       this.nombreUsuario = state.nombreUsuario;
       this.mostrarBienvenida = true;
@@ -31,11 +31,11 @@ export class Inicio implements OnInit {
   }
 
   ngOnInit() {
-    // 2. Si la alerta está activada, iniciamos un temporizador (setTimeout)
+    // 2. Si la alerta está activada, inicia un temporizador (setTimeout)
     if (this.mostrarBienvenida) {
       setTimeout(() => {
         console.log('Temporizador de 4 segundos finalizado. Ocultando toast...');
-        // Después de 4000 milisegundos (4 segundos), apagamos la alerta
+        // Después de 4000 milisegundos (4 segundos), apaga la alerta
         this.mostrarBienvenida = false;
         this.cdr.detectChanges();
       }, 4000);
